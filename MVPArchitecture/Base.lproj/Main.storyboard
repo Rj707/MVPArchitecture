@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QvN-Jr-59a">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gallery-->
+        <scene sceneID="AHD-Et-fi6">
+            <objects>
+                <viewController storyboardIdentifier="kGalleryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QvN-Jr-59a" customClass="GalleryViewController" customModule="MVPArchitecture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x5s-sv-v8K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nsJ-2g-Z3h">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kGalleryTableViewCell" rowHeight="300" id="3Ne-ct-pka" customClass="GalleryTableViewCell" customModule="MVPArchitecture" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ne-ct-pka" id="Mcu-Xe-4CT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="kLe-d2-ZGi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="kLe-d2-ZGi" secondAttribute="trailing" id="7wq-4U-fe7"/>
+                                                <constraint firstItem="kLe-d2-ZGi" firstAttribute="top" secondItem="Mcu-Xe-4CT" secondAttribute="top" id="EBl-iK-nyL"/>
+                                                <constraint firstItem="kLe-d2-ZGi" firstAttribute="leading" secondItem="Mcu-Xe-4CT" secondAttribute="leading" id="cSg-uL-23z"/>
+                                                <constraint firstAttribute="bottom" secondItem="kLe-d2-ZGi" secondAttribute="bottom" constant="10" id="rp3-9N-db1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="galleryImageView" destination="kLe-d2-ZGi" id="oYY-ab-fVM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MRG-tU-Jt2" firstAttribute="trailing" secondItem="nsJ-2g-Z3h" secondAttribute="trailing" id="EEd-fc-bCR"/>
+                            <constraint firstItem="nsJ-2g-Z3h" firstAttribute="leading" secondItem="MRG-tU-Jt2" secondAttribute="leading" id="U0j-Zv-g2i"/>
+                            <constraint firstItem="nsJ-2g-Z3h" firstAttribute="top" secondItem="MRG-tU-Jt2" secondAttribute="top" id="aNg-B1-8SV"/>
+                            <constraint firstItem="MRG-tU-Jt2" firstAttribute="bottom" secondItem="nsJ-2g-Z3h" secondAttribute="bottom" id="lPo-Od-F0I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MRG-tU-Jt2"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Gallery" id="1sz-bV-ir1"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="galleryTableView" destination="nsJ-2g-Z3h" id="nKg-Ec-0il"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vi3-r3-akJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Image-Placeholder" width="800" height="600"/>
+    </resources>
+</document>
