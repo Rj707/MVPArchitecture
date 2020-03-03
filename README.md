@@ -1,9 +1,28 @@
-# MVPArchitecture
+# MVPArchitecture!
 
-**Installation:**
+MVPArchitecture! is an iOS app that connects to [cloudinary](https://cloudinary.com/) for incredibly feature-rich image and video platform for developers.
 
-Once downloaded please open terminal and run following command $cd: pathToMVPArchitecture $ pod install
+This is actually the simple implementation of the MVP Architecture.
+ 
+## Compatibility
+ 
+ * iPhone and iPad
+ * Minimum iOS version: 10.0
+ 
+## Cloning
 
-Add your apikey(cloudinaryAPIKey in Constants file) after registering your account at https://cloudinary.com/
+Clone the GitHub repository and open the project workspace `MVPArchitecture.xcworkspace`. You may not need to install the Cocoapod dependencies as they are already inluded in the project repository.
 
-Swift5 - MVP 
+```
+$ git clone https://github.com/Rj707/MVPArchitecture.git
+$ cd MVPArchitecture
+$ open MVPArchitecture.xcworkspace
+```
+
+## NOTE
+
+Add your api key(**cloudinaryAPIKey** in Constants file) after registering your account at [cloudinary](https://cloudinary.com/)
+
+
+## Author
+Raja Saad, https://www.linkedin.com/in/hafiz-saad-%EF%A3%BF-48a952b4/
