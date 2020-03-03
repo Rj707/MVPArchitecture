@@ -21,7 +21,7 @@ $ open MVPArchitecture.xcworkspace
 
 ## NOTE
 
-Add your apikey(cloudinaryAPIKey in Constants file) after registering your account at [cloudinary](https://cloudinary.com/)
+Add your api key(**cloudinaryAPIKey** in Constants file) after registering your account at [cloudinary](https://cloudinary.com/)
 
 
 ## Author
