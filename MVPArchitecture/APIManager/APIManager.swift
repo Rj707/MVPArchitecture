@@ -15,50 +15,60 @@ final class APIManager
     private init() { }
     
     // MARK: Shared Instance
+    
     static let shared = APIManager()
     var httpHandler: HttpHandler =  HttpHandler.shared
-    
     
     //MARK: -  API's
     
     // Get Movies Data API
-        func getGalleryImages(_ next:String, completion : @escaping (_ isSuccessful: Bool, _ errorMessage : String?, _ arrResults : Gallery?) -> Void) {
-
+    
+    func getGalleryImages(_ next:String, completion : @escaping (_ isSuccessful: Bool, _ errorMessage : String?, _ arrResults : Gallery?) -> Void)
+    {
         let url = URLs.k_BASE_URL+Endpoints.getImages.rawValue+"\(next)"
         let headers = getApiHeaders()
         
         let reqParams: requestParameters = requestParameters(url: url, method: .get, parameters: nil, headers: headers)
-        print(url)
-        httpHandler.AlamoFireRequest(rp: reqParams) { (resJson, error) in
+        
+        httpHandler.AlamoFireRequest(rp: reqParams)
+        { (resJson, error) in
             
-            if resJson != nil {
-                do {
+            if resJson != nil
+            {
+                do
+                {
                     let response = try JSONDecoder().decode(Gallery.self, from: resJson as! Data)
                     completion(true,nil,response)
-                } catch {
+                }
+                catch
+                {
                     print(error)
                     completion(false,error.localizedDescription, nil)
                 }
             }
-            else{
+            else
+            {
                 completion(false, error?.localizedDescription, nil)
             }
         }
     }
     
     // MARK: Get API Headers
-    func getApiHeaders() ->  [String:String]{
-        
+    
+    func getApiHeaders() ->  [String:String]
+    {
         let user = "554652571641736"
         let password = "j_aMCHr0oNR6riLliLXUGsqEOIU"
 
         let credentialData = "\(user):\(password)".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
         let base64Credentials = credentialData.base64EncodedString()
         
-        let headers = [
+        let headers =
+            [
                     "Authorization": "Basic \(base64Credentials)",
                     "Accept": "application/json",
-                    "Content-Type": "application/json" ]
+                    "Content-Type": "application/json"
+            ]
         return headers
     }
     

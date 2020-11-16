@@ -9,25 +9,22 @@
 import Foundation
 import UIKit
 
-struct Constants {
-    
+struct Constants
+{
     static let galleryCellName = "kGalleryTableViewCell"
     static let galleryViewController = "kGalleryViewController"
     
     static let mainStoryBoard = "Main"
     static let cloudinaryAPIKey = "Enter_Your_API_Key_Here"
-
-
 }
 
-struct URLs {
-    
+struct URLs
+{
     static let k_BASE_URL = "https://api.cloudinary.com/v1_1/\(Constants.cloudinaryAPIKey)/"
-
 }
 
-public enum Endpoints: String {
-    
+public enum Endpoints: String
+{
     case getImages = "resources/image?next_cursor="
 }
 

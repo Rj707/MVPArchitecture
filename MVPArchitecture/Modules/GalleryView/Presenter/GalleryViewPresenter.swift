@@ -10,15 +10,15 @@ import Foundation
 
 class GalleryViewPresenter: GalleryViewToPresenterProtocol
 {
-    
     var galleryImagesArray = [GalleryResource]()
     var view : PresenterToGalleryViewProtocol?
     
-    func fetchImages() {
-        
+    func fetchImages()
+    {
         view?.showLoader()
         
-        APIManager.shared.getGalleryImages("") { (isSuccessful, errorMessage, galleryObject) in
+        APIManager.shared.getGalleryImages("")
+        { (isSuccessful, errorMessage, galleryObject) in
             
             self.view?.hideLoader()
             
@@ -26,19 +26,20 @@ class GalleryViewPresenter: GalleryViewToPresenterProtocol
             
             self.view?.reloadGalleryTableData()
         }
-        
     }
     
-    func numberOfImages() -> Int{
+    func numberOfImages() -> Int
+    {
         return galleryImagesArray.count
     }
     
-    func galleryImageDataAt(row:Int) -> GalleryResource{
+    func galleryImageDataAt(row:Int) -> GalleryResource
+    {
         return galleryImagesArray[row]
     }
     
-    func didSelectImageAt(row: Int) {
+    func didSelectImageAt(row: Int)
+    {
         view?.showSelectedImageDetail(detail: galleryImagesArray[row])
-    }
-    
+    }    
 }

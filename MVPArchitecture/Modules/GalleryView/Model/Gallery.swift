@@ -4,17 +4,20 @@
 
 import Foundation
 
-struct Gallery : Codable {
-    
+struct Gallery : Codable
+{
     let nextCursor : String?
     let resources : [GalleryResource]?
     
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey
+    {
         case nextCursor = "next_cursor"
         case resources = "resources"
     }
-    init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws
+    {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         nextCursor = try values.decodeIfPresent(String.self, forKey: .nextCursor)
         resources = try values.decodeIfPresent([GalleryResource].self, forKey: .resources)
@@ -22,8 +25,8 @@ struct Gallery : Codable {
 }
 
 
-struct GalleryResource {
-    
+struct GalleryResource
+{
     let bytes : Int?
     let createdAt : String?
     let format : String?
@@ -37,8 +40,10 @@ struct GalleryResource {
     let width : Int?
 }
 
-extension GalleryResource: Codable {
-    enum CodingKeys: String, CodingKey {
+extension GalleryResource: Codable
+{
+    enum CodingKeys: String, CodingKey
+    {
         case bytes = "bytes"
         case createdAt = "created_at"
         case format = "format"
@@ -51,7 +56,9 @@ extension GalleryResource: Codable {
         case version = "version"
         case width = "width"
     }
-    init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws
+    {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         bytes = try values.decodeIfPresent(Int.self, forKey: .bytes)
         createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
@@ -65,5 +72,4 @@ extension GalleryResource: Codable {
         version = try values.decodeIfPresent(Int.self, forKey: .version)
         width = try values.decodeIfPresent(Int.self, forKey: .width)
     }
-    
 }
