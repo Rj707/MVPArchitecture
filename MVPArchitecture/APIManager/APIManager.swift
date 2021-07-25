@@ -25,7 +25,7 @@ final class APIManager
     
     func getGalleryImages(_ next:String, completion : @escaping (_ isSuccessful: Bool, _ errorMessage : String?, _ arrResults : Gallery?) -> Void)
     {
-        let url = URLs.k_BASE_URL+Endpoints.getImages.rawValue+"\(next)"
+        let url = URLs.k_BASE_URL+Endpoints.getImages.rawValue+"\(1)"
         let headers = getApiHeaders()
         
         let reqParams: requestParameters = requestParameters(url: url, method: .get, parameters: nil, headers: headers)

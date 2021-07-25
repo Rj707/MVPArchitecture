@@ -15,7 +15,7 @@ struct Constants
     static let galleryViewController = "kGalleryViewController"
     
     static let mainStoryBoard = "Main"
-    static let cloudinaryAPIKey = "Enter_Your_API_Key_Here"
+    static let cloudinaryAPIKey = "884524953291618"
 }
 
 struct URLs

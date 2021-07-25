@@ -10,8 +10,9 @@ import Foundation
 
 class GalleryViewPresenter: GalleryViewToPresenterProtocol
 {
-    var galleryImagesArray = [GalleryResource]()
     var view : PresenterToGalleryViewProtocol?
+    
+    var galleryImagesArray = [GalleryResource]()
     
     func fetchImages()
     {
